@@ -1,0 +1,46 @@
+//Mixins (re-usable CSS)
+
+@mixin banner{
+    width: 100%;
+    position: relative;
+    color: white;
+    .banner-content{
+        position: absolute;
+        top: 50px;
+        width: 100%;
+    }
+
+    img{
+        width: 100%
+    }
+    span{
+        font-size: $bannerHeading;
+        display: block;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    span.title{
+        font-weight: normal;
+        margin-bottom: 30px;
+    }
+
+}
+
+@mixin clearfix{
+    &::after{  //navbar ekta list howar karone sekhan the button gula remove korte hoy
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+@mixin grid($columns,$margin){
+    float: left;
+    margin-right: $margin;
+    margin-bottom: $margin;
+    width: ((100% -(($columns - 1) * $margin))/ $columns);
+    & :nth-child(#{$columns}n){
+        margin-right: 0;
+    }
+}
+//------------------------------
